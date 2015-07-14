@@ -37,9 +37,9 @@ public abstract class Ship {
         this.circulationDate = circulationDate;
     }
     
-    public abstract void agregarElemento();
+    public abstract void addElement();
     
-    public abstract double vaciarCobrar();
+    public abstract double emptyCharge();
     
     @Override
     public String toString(){
