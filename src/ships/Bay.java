@@ -62,6 +62,10 @@ public class Bay {
 
     }
 
+    /**
+     * Static method for adding a ship to the ArrayList <code>boats</code>
+     * @param tipo - The Ship's type, which may either be <code>PASSENGER</code> or <code>FISHING</code>
+     */
     public static void addShip(ShipType tipo){
         Ship b = null;
         String n = "";
@@ -85,6 +89,11 @@ public class Bay {
         }
     }
 
+    /**
+     * Adds the respective element for the ship; due to polymorphism, it calls
+     * the necessary ship's method, regardless of it being a Fishing or Passenger one
+     * @param name 
+     */
     public static void addElement(String name){
         Ship barc = searchShip(name);
         if (barc != null)
@@ -98,6 +107,11 @@ public class Bay {
             return lea.next();
     }
 
+    /**
+     * Searchs if the ship exists in the ArrayList
+     * @param n - Name of the ship to search
+     * @return - The instance of the ship if found; <code>null</code> otherwise.
+     */
     public static Ship searchShip(String n){
         for(Ship b : boats){
             if(b.getName().equals(n))
@@ -107,6 +121,11 @@ public class Bay {
         return null;
     }
 
+    /**
+     * Empties the ship with its respective method, showing the total generated and all
+     * @param n - Name of the ship to be emptied.
+     * @return - The total generated from the ship
+     */
     public static double emptyShip(String n){
         Ship b = searchShip(n);
         if (b != null){
@@ -118,6 +137,9 @@ public class Bay {
         return 0;
    }
 
+    /**
+     * If it is a passenger ship, it lists its passengers.
+     */
     public static void listPassengers() {
         for(Ship b : boats){
             if (b instanceof PassengerShip)
@@ -125,6 +147,12 @@ public class Bay {
         }
     }
 
+    /**
+     * If it is a Fishing ship, it adds a fish/cardumen
+     * @param name - Name of the ship to search
+     * @param quant - Quantity of fishes to be added
+     * @throws CardumenException - If fish quantity is negative
+     */
     public static void addCardumen(String name, int quant)throws CardumenException {
         Ship b = searchShip(name);
 

@@ -36,7 +36,7 @@ public class FishingShip extends Ship{
      * @param quantity the quantity of cardumen/fishes
      * @throws CardumenException If the quantity is negative
      */
-    public void agregarCardumen(int quantity)throws CardumenException {
+    public void addCardumen(int quantity)throws CardumenException {
         if( quantity < 0 )
             throw new CardumenException(quantity);
         capturedFishes += quantity;
